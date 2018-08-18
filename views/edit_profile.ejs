@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Info</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    
+</head>
+<body>
+    <div class="container col-sm-12" id="mainform">
+            <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                                                           
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Sign Up</div>
+<!--                             <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/login">Sign In</a></div>
+ -->                        </div> 
+                        <div class="panel-body" >
+                            <form class="form-horizontal" role="form" method="post" action="/update" onSubmit="return checkblank(this);">
+                                <% if (message.length > 0) { %>
+                                                                                                            <div class="alert alert-success col-sm-12"><%= message %></div>
+                                                                                                <% } %>
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="full_names" class="col-md-3 control-label">Full Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" required name="full_name" value=<%=data[0].full_name%> placeholder="Full Name">
+                                    </div>
+                                </div>
+                                                                                                <div class="form-group">
+                                    <label for="eaddress" class="col-md-3 control-label">Email</label>
+                                    <div class="col-md-9">
+                                        <input type="email" class="form-control" value=<%=data[0].email%> pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required name="emailaddress" placeholder="email">
+                                    </div>
+                                </div>
+                                                                                                <!-- <div class="form-group">
+                                    <label for="user_name" class="col-md-3 control-label">User Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="user_name" placeholder="User Name">
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label for="passwords" class="col-md-3 control-label">Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" value=<%=data[0].password%> minlength='8' required pattern= "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$" class="form-control" name="password" placeholder="must be 8 length character with atleast a lower case, uppercase, number and special character">
+<!--                                     <p>must be 8 length character with atleast a lower case, uppercase, number and special character</p>
+ -->                                    </div>
+                                </div>
+ 
+                                <div class="form-group">
+                                        <!-- Button -->                                       
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button id="btn-update" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Update</button>
+                                            
+                                        </div>
+                                    </div>
+                               
+                                
+                                
+                                
+                            </form>
+                         </div>
+                    </div>
+              
+                
+         </div>
+    </div>
+   
+</body>
+</html>
+ 
